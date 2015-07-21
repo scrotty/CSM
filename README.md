@@ -47,7 +47,7 @@ String myStatusInJson = toJsonString(StatusMessageBuilder.builder()
 ```
 
 ## A Closer Look at the CSM Objects
-The root of the CSM tree is the StatusMessage. It contains the properties previously illustrated above - component, status, and timestamps - and a few more optional fields: notes and subStatuses. It also contains one more required field called statusMessageType. StatusMessageType wasn't shown in the introduction section to keep it simpe. But all the feilds - required and optional will be discussed in detail below.
+The root of the CSM tree is the StatusMessage. It contains the properties previously illustrated above - component, status, and timestamps - and a few more optional fields: notes and subStatuses. It also contains one more required field called statusMessageType. StatusMessageType wasn't shown in the introduction section to keep it simple. But all the feilds - required and optional will be discussed in detail below.
 
 Before we dive into StatusMessage let's look at all the CSM domain objects and their interaction with each other. The ASCII diagram below (Fig 1) is in semi-UML Class Diagram form. The exclamation points before certain fields indicate they are required to be present and non-null.
 ###### Figure 1: CSM Domain Objects Class Diagram
