@@ -1,4 +1,3 @@
-_To view this Markdown document in all its glory be sure to use a Markdown viewer. One option is simply to copy the entire contents of this file into the left pane of [this online Markdown editor/viewer](http://dillinger.io/)._
 # Commons Status Message (CSM)
 
 Commons Status Message (CSM) is designed to give CTG Video Services applications a standard way to report their statuses. Applications use the CSM-defined structures to create arbitrarily complex status messages and then have CSM generate a JSON version of those nested statuses which can then be passed as the response in a status query managed by the application.
