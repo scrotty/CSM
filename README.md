@@ -125,7 +125,7 @@ Component: {
     secondaryId: "ROTX/2/4"
 }
 ```
-Either (and many other possiblilties) are perfectly valid options for how to identify your component(s) in CSM. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. Ultimately it was decided that having a basic but flexible CSM format would allow teams to "say" what was needed for all their different roles.
+Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. In the end it was decided that having a basic but flexible CSM format would allow teams to "say" what was needed for all their different roles.
 
 ##### Status Message : _StatusMessageType_ Field 
 
