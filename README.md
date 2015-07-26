@@ -100,3 +100,34 @@ Before we dive into StatusMessage let's look at all the CSM domain objects and t
                      | ! componentName : MajorExternalComponentType : enum |
                      +-----------------------------------------------------+
 ```
+As previously alluded to, Status Messages have four required fields: identity, message type, status, and timestamp (both a epoch long and a ISO-8601 UTC). Let's look at these fields a little closer.
+
+##### Status Message : _Component_ Field
+The Component field of the Status Message acts as an identity. There are three types of Component: Major, Major External, and General. All Video Services Applications should have a Major Component type defined for it. For example, SIA has MajorComponentType.SIA. An enum defines all the possible values. You should check and ensure your component is defined. If not, make sure it gets added! It's important you refer to your own application and other Video Services applications by their MajorComponentType. That way message flows can be properly correlated.
+
+The Major _External_ Component type is similar to the previous component. The difference is that it refers to common applications (sometimes vendor application) that are not part of the Video Services stable. These include applications like EDW, DSB, DIGITALSMITHS, etc. Check through that enum to see what's available. If you think a common external application should be included make sure to propose that.
+
+The final Component type is _General_. It is designed to be a catchall for anything that isn't named in MajorComponentType or MajorExternalComponentType. It could be a vendor application that few if any other Video Services applications interface with. It might also be sub-components of your own Major component. Maybe you wish to create a StatusMessage about your application's persistence system. You could create a General Component with the component name "Persistence" - or _whatever_ provides meaning to you. Remember, the CSM is purposefully designed to allow the implementor to define meaning how they see fit. 
+
+All component types optionally allow for the inclusion of further means of identification. They are named: secondaryId, tertiaryId, and quaternaryId. All are simple string fields and can be set to _anything_ you might find useful - or not used at all! For example, I might create the following MajorComponent for mADM:
+```
+Component: {
+    componentName: MajorComponentType.MADM,
+    secondaryId: "ROTX",
+    tertiaryId: "Server-02",
+    quaternaryId: "Cluster-instance-04"
+}
+```
+But I could have just as easily decided a different scheme to record the same information:
+```
+Component: {
+    componentName: MajorComponentType.MADM,
+    secondaryId: "ROTX/2/4"
+}
+```
+Either (and many other possiblilties) are perfectly valid options for how to identify your component(s) in CSM. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. Ultimately it was decided that having a basic but flexible CSM format would allow teams to "say" what was needed for all their different roles.
+
+##### Status Message : _StatusMessageType_ Field 
+
+
+Status Messages also support additional optional fields that make them especially expressive. 
