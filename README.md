@@ -52,6 +52,8 @@ The root of the CSM tree is the StatusMessage. It contains the properties previo
 Before we dive into StatusMessage let's look at all the CSM domain objects and their interaction with each other. The ASCII diagram below (Fig 1) is in semi-UML Class Diagram form. The exclamation points before certain fields indicate they are required to be present and non-null.
 ###### Figure 1: CSM Domain Objects Class Diagram
 ```
+(! indicates a mandatory and non-null field)
+
         +-------------------------------------+                             
         |   STATUS MESSAGE : Domain Object    | <---+                       
         |=====================================|     |                       
@@ -125,7 +127,7 @@ Component: {
     secondaryId: "ROTX/2/4"
 }
 ```
-Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. In the end it was decided that having a basic but flexible CSM format would allow teams to express what was needed for any situation they may need to describe.
+Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Although notice that the component name of MADM (as a MajorComponentType) is included in both examples. The extra id fields can be used however you wish, but the main identification field, componentName, needs to be standard. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. In the end it was decided that having a basic but flexible CSM format would allow teams to express what was needed for any situation they may need to describe.
 
 ##### Status Message : _StatusMessageType_ Field 
 
