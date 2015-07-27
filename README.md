@@ -105,7 +105,7 @@ As previously alluded to, Status Messages have four required fields: identity, m
 ##### Status Message : _Component_ Field
 The Component field of the Status Message acts as an identity. There are three types of Component: Major, Major External, and General. All Video Services Applications should have a Major Component type defined for it. For example, SIA has MajorComponentType.SIA. An enum defines all the possible values. You should check and ensure your component is defined. If not, make sure it gets added! It's important you refer to your own application and other Video Services applications by their MajorComponentType. That way message flows can be properly correlated.
 
-The Major _External_ Component type is similar to the previous component. The difference is that it refers to common applications (sometimes vendor application) that are not part of the Video Services stable. These include applications like EDW, DSB, DIGITALSMITHS, etc. Check through that enum to see what's available. If you think a common external application should be included make sure to propose that.
+The Major _External_ Component type is similar to the previous component. The difference is that it refers to common applications (sometimes vendor applications) that are not part of the Video Services stable. These include applications like EDW, DSB, DIGITALSMITHS, etc. Check through that enum to see what's available. If you think a common external application should be included make sure to propose that.
 
 The final Component type is _General_. It is designed to be a catchall for anything that isn't named in MajorComponentType or MajorExternalComponentType. It could be a vendor application that few if any other Video Services applications interface with. It might also be sub-components of your own Major component. Maybe you wish to create a StatusMessage about your application's persistence system. You could create a General Component with the component name "Persistence" - or _whatever_ provides meaning to you. Remember, the CSM is purposefully designed to allow the implementor to define meaning how they see fit. 
 
@@ -125,7 +125,7 @@ Component: {
     secondaryId: "ROTX/2/4"
 }
 ```
-Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. In the end it was decided that having a basic but flexible CSM format would allow teams to "say" what was needed for all their different roles.
+Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. In the end it was decided that having a basic but flexible CSM format would allow teams to express what was needed for any situation they may need to describe.
 
 ##### Status Message : _StatusMessageType_ Field 
 
