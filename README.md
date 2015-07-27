@@ -120,7 +120,7 @@ Component: {
     quaternaryId: "Cluster-Instance: 04"
 }
 ```
-But I could have just as easily decided a different scheme to record the same information:
+But I could have just as easily decided on a different scheme to record the same information:
 ```
 Component: {
     componentName: MajorComponentType.MADM,
