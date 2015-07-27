@@ -127,7 +127,9 @@ Component: {
     secondaryId: "SYR/2/4"
 }
 ```
-Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Although notice that the component name of MADM (as a MajorComponentType) is included in both examples. The extra id fields can be used however you wish, but the main identification field, componentName, needs to be standard. Of course while this lack of direction gives you a lot of flexibility it will also force lots of special coordination on the system(s) that will ultimately parse and process those messages. In the end it was decided that having a basic but flexible CSM format would allow teams to express what was needed for any situation they may need to describe.
+Either (and many other possibilties) are perfectly valid options for how to identify your component(s) in CSM. Although notice that the component name of MADM (as a MajorComponentType) is included in both examples. The extra id fields can be used however you wish, but the main identification field, componentName, needs to be standard.
+
+While the lack of strict direction in component identification gives you a lot of flexibility it will also force a lot of special coordination on the system(s) that will ultimately parse and process those messages. But in the end it was decided that having a basic but flexible CSM format would allow teams to better express whatever was needed for any situation.
 
 ##### Status Message : _StatusMessageType_ Field 
 
